@@ -62,8 +62,11 @@ elements.forEach(el => observer.observe(el));
 
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".custom-navbar");
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
+  if (navbar) {
+    navbar.classList.toggle("scrolled", window.scrollY > 100);
+  }
 });
+
 
 // ================= CITY ANIMATION =================
 const cityCards = document.querySelectorAll('.city-card');
