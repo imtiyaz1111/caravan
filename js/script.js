@@ -100,6 +100,25 @@ const tourSwiper = new Swiper(".tourSwiper", {
   }
 });
 
+// reviews
+const reviewSwiper = new Swiper(".reviewSwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    768: { slidesPerView: 2 },
+    1024: { slidesPerView: 3 }
+  }
+});
+
 // gallery
 const allImages = document.querySelectorAll('.gallery-item img');
 const visibleImages = document.querySelectorAll('.gallery-item img'); // first 8 visible by CSS

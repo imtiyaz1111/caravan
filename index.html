@@ -91,31 +91,32 @@
         <form>
 
           <div class="input-group">
-            <span>📍</span>
+            <span><i class="bi bi-geo-alt-fill"></i></span>
             <input type="text" placeholder="Pick From">
           </div>
 
           <div class="input-group">
-            <span>📍</span>
+            <span><i class="bi bi-geo-alt-fill"></i></span>
             <input type="text" placeholder="Travelling To">
           </div>
 
           <label>Travel Date</label>
           <div class="input-group">
+            <span><i class="bi bi-calendar-event-fill"></i></span>
             <input type="date">
           </div>
 
           <div class="input-group">
-            <span>📞</span>
+            <span><i class="bi bi-telephone-fill"></i></span>
             <input type="tel" placeholder="Phone Number">
           </div>
 
           <div class="input-group">
-            <span>👥</span>
+            <span><i class="bi bi-people-fill"></i></span>
             <input type="number" placeholder="No. Of Passengers">
           </div>
 
-          <button type="submit">🚐 Enquire Now</button>
+          <button type="submit">Enquire Now</button>
 
         </form>
 
@@ -533,57 +534,57 @@
   </section>
 
 
-<!-- ================= VIDEO SECTION ================= -->
-<section class="video-section">
+  <!-- ================= VIDEO SECTION ================= -->
+  <section class="video-section">
 
-  <!-- ✅ BACKGROUND VIDEO FIX -->
-  <video autoplay muted loop playsinline class="bg-video">
-    <source src="./images/demo.mp4" type="video/mp4"> <!-- FIXED PATH -->
-  </video>
-
-  
-
-  <!-- OVERLAY -->
-  <div class="video-overlay"></div>
-
-  <div class="container">
-    <div class="video-content text-center">
-
-      <h2>Luxury Caravan Experience</h2>
-      <p>Watch how we make your journeys premium & unforgettable</p>
-
-      <!-- PLAY BUTTON -->
-      <div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
-        <i class="bi bi-play-fill"></i>
-      </div>
-
-    </div>
-  </div>
-
-</section>
+    <!-- ✅ BACKGROUND VIDEO FIX -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="./images/demo.mp4" type="video/mp4"> <!-- FIXED PATH -->
+    </video>
 
 
-<!-- ================= VIDEO MODAL ================= -->
-<div class="modal fade" id="videoModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content bg-dark border-0">
 
-      <div class="modal-body p-0 position-relative">
+    <!-- OVERLAY -->
+    <div class="video-overlay"></div>
 
-        <!-- CLOSE BUTTON -->
-        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-          data-bs-dismiss="modal"></button>
+    <div class="container">
+      <div class="video-content text-center">
 
-        <!-- ✅ MODAL VIDEO -->
-        <video controls width="100%" id="modalVideo">
-          <source src="./images/demo.mp4" type="video/mp4">
-        </video>
+        <h2>Luxury Caravan Experience</h2>
+        <p>Watch how we make your journeys premium & unforgettable</p>
+
+        <!-- PLAY BUTTON -->
+        <div class="play-btn" data-bs-toggle="modal" data-bs-target="#videoModal">
+          <i class="bi bi-play-fill"></i>
+        </div>
 
       </div>
+    </div>
 
+  </section>
+
+
+  <!-- ================= VIDEO MODAL ================= -->
+  <div class="modal fade" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark border-0">
+
+        <div class="modal-body p-0 position-relative">
+
+          <!-- CLOSE BUTTON -->
+          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+            data-bs-dismiss="modal"></button>
+
+          <!-- ✅ MODAL VIDEO -->
+          <video controls width="100%" id="modalVideo">
+            <source src="./images/demo.mp4" type="video/mp4">
+          </video>
+
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
   <!-- ================= LOCAL AREAS ================= -->
   <section class="local-section">
@@ -1552,6 +1553,93 @@
     </div>
   </section>
 
+  <!-- ================= TESTIMONIALS SECTION ================= -->
+  <section class="testimonial-section">
+    <div class="container">
+      
+      <div class="section-heading text-center">
+        <span class="sub-tag">Customer Reviews</span>
+        <h2>What Our <span>Clients Say</span></h2>
+        <p>Real experiences from our 100+ happy customers</p>
+        <div class="rating-badge mt-2">
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <i class="bi bi-star-fill text-warning"></i>
+          <span class="ms-2 fw-bold">4.9 / 5.0 Rating</span>
+        </div>
+      </div>
+
+      <!-- SWIPER -->
+      <div class="swiper reviewSwiper mt-5">
+        <div class="swiper-wrapper">
+
+          <!-- Review 1 -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="quote-icon"><i class="bi bi-quote"></i></div>
+              <p class="review-text">"Absolutely incredible experience! The caravan was spotless, fully equipped, and the driver was extremely professional. Made our family trip to Manali unforgettable. Will definitely book again!"</p>
+              <div class="reviewer">
+                <div class="reviewer-info">
+                  <h5>Rahul Sharma</h5>
+                  <span>Family Trip to Manali</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="quote-icon"><i class="bi bi-quote"></i></div>
+              <p class="review-text">"We rented a luxury caravan for a 3-day video shoot in Rajasthan. The makeup area and privacy space were a lifesaver for our crew. Highly recommend for any production team looking for comfort."</p>
+              <div class="reviewer">
+                <div class="reviewer-info">
+                  <h5>Priya Desai</h5>
+                  <span>Film Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="quote-icon"><i class="bi bi-quote"></i></div>
+              <p class="review-text">"The best way to travel! The beds were super comfortable, AC worked perfectly, and we loved the spacious interior. Better than a 5-star hotel because the view outside our window kept changing."</p>
+              <div class="reviewer">
+                <div class="reviewer-info">
+                  <h5>Amit Verma</h5>
+                  <span>Road Trip to Rishikesh</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="swiper-slide">
+            <div class="review-card">
+              <div class="quote-icon"><i class="bi bi-quote"></i></div>
+              <p class="review-text">"Smooth booking process and premium service. We took the caravan to Agra. The interior feels like a luxury lounge. A must-try if you value comfort and privacy during your travels."</p>
+              <div class="reviewer">
+                <div class="reviewer-info">
+                  <h5>Neha Singh</h5>
+                  <span>Weekend Getaway</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ================= FAQ SECTION ================= -->
   <section class="faq-section">
     <div class="container">
@@ -1665,19 +1753,41 @@
                   </div>
 
                   <div class="col-md-6">
-                    <input type="email" placeholder="Email Address" required>
-                  </div>
-
-                  <div class="col-md-6">
                     <input type="text" placeholder="Phone / WhatsApp" required>
                   </div>
 
                   <div class="col-md-6">
-                    <input type="text" placeholder="Travel Location (Optional)">
+                    <input type="email" placeholder="Email Address">
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="text" placeholder="Pickup Location (e.g. Delhi)" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="number" placeholder="No. of Passengers (Guests)" min="1">
+                  </div>
+
+                  <div class="col-md-6">
+                    <select required>
+                      <option value="" disabled selected>Purpose of Trip</option>
+                      <option value="tour">Holiday Tour / Road Trip</option>
+                      <option value="shoot">Film / Video Shoot</option>
+                      <option value="event">Wedding / Event</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="text" placeholder="Pickup Date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                  </div>
+
+                  <div class="col-md-6">
+                    <input type="text" placeholder="Drop-off Date" onfocus="(this.type='date')" onblur="(this.type='text')">
                   </div>
 
                   <div class="col-12">
-                    <textarea placeholder="Tell us about your trip..."></textarea>
+                    <textarea placeholder="Tell us about your trip or special requirements..."></textarea>
                   </div>
 
                   <div class="col-12">
