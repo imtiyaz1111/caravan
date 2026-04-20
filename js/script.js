@@ -1,21 +1,21 @@
 // ================= LOAD COMPONENTS =================
 async function loadComponent(id, file) {
-    const res = await fetch(file);
-    const data = await res.text();
-    document.getElementById(id).innerHTML = data;
+  const res = await fetch(file);
+  const data = await res.text();
+  document.getElementById(id).innerHTML = data;
 }
 
 // Load Navbar + attach events AFTER load
 loadComponent("navbar", "/components/navbar.html").then(() => {
 
-    const links = document.querySelectorAll(".nav-link");
+  const links = document.querySelectorAll(".nav-link");
 
-    links.forEach(link => {
-        link.addEventListener("click", function () {
-            links.forEach(l => l.classList.remove("active"));
-            this.classList.add("active");
-        });
+  links.forEach(link => {
+    link.addEventListener("click", function () {
+      links.forEach(l => l.classList.remove("active"));
+      this.classList.add("active");
     });
+  });
 
 });
 
@@ -82,42 +82,46 @@ const cityObserver = new IntersectionObserver(entries => {
 cityCards.forEach(card => cityObserver.observe(card));
 
 // tour
-const tourSwiper = new Swiper(".tourSwiper", {
-  slidesPerView: 3,
-  spaceBetween: 25,
-  loop: true,
-  autoplay: {
-    delay: 3000,
-  },
-  navigation: {
-    nextEl: ".tour-next",
-    prevEl: ".tour-prev",
-  },
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
+if (typeof Swiper !== 'undefined' && document.querySelector(".tourSwiper")) {
+  const tourSwiper = new Swiper(".tourSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 25,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    navigation: {
+      nextEl: ".tour-next",
+      prevEl: ".tour-prev",
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+}
 
 // reviews
-const reviewSwiper = new Swiper(".reviewSwiper", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  loop: true,
-  autoplay: {
-    delay: 4000,
-  },
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: { slidesPerView: 1 },
-    768: { slidesPerView: 2 },
-    1024: { slidesPerView: 3 }
-  }
-});
+if (typeof Swiper !== 'undefined' && document.querySelector(".reviewSwiper")) {
+  const reviewSwiper = new Swiper(".reviewSwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 4000,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+}
 
 // gallery
 const allImages = document.querySelectorAll('.gallery-item img');
@@ -126,57 +130,65 @@ const modal = document.getElementById('galleryModal');
 const modalImg = document.getElementById('modalImg');
 const openBtn = document.getElementById('openGallery');
 
-let currentIndex = 0;
-let isFullGallery = false;
+if (modal && modalImg && openBtn) {
+  let currentIndex = 0;
+  let isFullGallery = false;
 
-// OPEN FROM GRID (ONLY VISIBLE 8)
-visibleImages.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    modal.style.display = "flex";
-    modalImg.src = img.src;
-    currentIndex = index;
-    isFullGallery = false;
+  // OPEN FROM GRID (ONLY VISIBLE 8)
+  visibleImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+      currentIndex = index;
+      isFullGallery = false;
+    });
   });
-});
 
-// VIEW MORE → OPEN FULL GALLERY
-openBtn.onclick = () => {
-  modal.style.display = "flex";
-  modalImg.src = allImages[0].src;
-  currentIndex = 0;
-  isFullGallery = true;
-};
+  // VIEW MORE → OPEN FULL GALLERY
+  openBtn.onclick = () => {
+    modal.style.display = "flex";
+    modalImg.src = allImages[0].src;
+    currentIndex = 0;
+    isFullGallery = true;
+  };
 
-// CLOSE
-document.querySelector('.close-btn').onclick = () => {
-  modal.style.display = "none";
-};
-
-// NEXT
-document.querySelector('.next').onclick = (e) => {
-  e.stopPropagation();
-
-  if (isFullGallery) {
-    currentIndex = (currentIndex + 1) % allImages.length;
-    modalImg.src = allImages[currentIndex].src;
-  } else {
-    currentIndex = (currentIndex + 1) % visibleImages.length;
-    modalImg.src = visibleImages[currentIndex].src;
+  // CLOSE
+  if (document.querySelector('.close-btn')) {
+    document.querySelector('.close-btn').onclick = () => {
+      modal.style.display = "none";
+    };
   }
-};
 
-// PREV
-document.querySelector('.prev').onclick = (e) => {
-  e.stopPropagation();
+  // NEXT
+  if (document.querySelector('.next')) {
+    document.querySelector('.next').onclick = (e) => {
+      e.stopPropagation();
 
-  if (isFullGallery) {
-    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-    modalImg.src = allImages[currentIndex].src;
-  } else {
-    currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
-    modalImg.src = visibleImages[currentIndex].src;
+      if (isFullGallery) {
+        currentIndex = (currentIndex + 1) % allImages.length;
+        modalImg.src = allImages[currentIndex].src;
+      } else {
+        currentIndex = (currentIndex + 1) % visibleImages.length;
+        modalImg.src = visibleImages[currentIndex].src;
+      }
+    };
   }
-};
+
+  // PREV
+  if (document.querySelector('.prev')) {
+    document.querySelector('.prev').onclick = (e) => {
+      e.stopPropagation();
+
+      if (isFullGallery) {
+        currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+        modalImg.src = allImages[currentIndex].src;
+      } else {
+        currentIndex = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+        modalImg.src = visibleImages[currentIndex].src;
+      }
+    };
+  }
+}
 
 const faqItems = document.querySelectorAll(".faq-item");
 
