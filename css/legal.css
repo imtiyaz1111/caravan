@@ -1,0 +1,138 @@
+/* ==========================================================================
+   LEGAL PAGES COMMON STYLES (Privacy Policy, Terms & Conditions)
+   ========================================================================== */
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f1d592;
+    --dark-bg: #0f1216;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --text-muted: #a0a0a0;
+    --white: #ffffff;
+}
+
+/* HERO SECTION */
+.legal-hero {
+    padding: 120px 0 60px;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('/images/slide/slide1.webp');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    border-bottom: 2px solid var(--gold);
+}
+
+.legal-hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.legal-hero h1 span {
+    color: var(--gold);
+}
+
+.breadcrumb-custom {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.breadcrumb-custom a {
+    color: var(--gold);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.breadcrumb-custom a:hover {
+    color: var(--gold-light);
+}
+
+/* CONTENT SECTION */
+.legal-content-section {
+    padding: 80px 0;
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+.legal-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.legal-item {
+    margin-bottom: 40px;
+}
+
+.legal-item h2 {
+    color: var(--gold);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.legal-item h2 i {
+    font-size: 1.5rem;
+    background: rgba(212, 175, 55, 0.1);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.legal-item p, .legal-item ul {
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.legal-item ul {
+    padding-left: 20px;
+}
+
+.legal-item ul li {
+    margin-bottom: 10px;
+    list-style: none;
+    position: relative;
+}
+
+.legal-item ul li::before {
+    content: "→";
+    color: var(--gold);
+    position: absolute;
+    left: -20px;
+}
+
+.last-updated {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .legal-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .legal-card {
+        padding: 30px 20px;
+    }
+    
+    .legal-item h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -239,19 +239,23 @@ if (modal && modalImg && openBtn) {
   }
 }
 
-const faqItems = document.querySelectorAll(".faq-item");
+// ================= PREMIUM FAQ ACCORDION =================
+document.addEventListener("click", (e) => {
+  const question = e.target.closest(".faq-question");
+  if (!question) return;
 
-faqItems.forEach(item => {
-  item.addEventListener("click", () => {
+  const item = question.parentElement;
+  const isActive = item.classList.contains("active");
 
-    faqItems.forEach(el => {
-      if (el !== item) el.classList.remove("active");
-    });
-
-    item.classList.toggle("active");
-
+  // Close all other FAQ items on the page
+  document.querySelectorAll(".faq-item").forEach((el) => {
+    if (el !== item) el.classList.remove("active");
   });
+
+  // Toggle active class on current item
+  item.classList.toggle("active");
 });
+
 
 const scrollTopBtn = document.getElementById("scrollTopBtn");
 
