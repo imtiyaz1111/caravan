@@ -1,0 +1,42 @@
+<div class="booking-modal-overlay" id="bookingModalOverlay">
+    <div class="booking-modal-container">
+        <div class="close-modal" id="closeBookingModal">
+            <i class="bi bi-x-lg"></i>
+        </div>
+
+        <div class="booking-modal-header">
+            <h2>Book Your <span>Luxury Journey</span></h2>
+            <p>Experience the ultimate road trip comfort</p>
+        </div>
+
+        <form id="modalBookingForm" action="/send-inquiry.php" method="POST">
+            <div class="modal-input-group">
+                <span><i class="bi bi-geo-alt-fill"></i></span>
+                <input type="text" name="pickup" placeholder="Pick From" required>
+            </div>
+
+            <div class="modal-input-group">
+                <span><i class="bi bi-geo-alt-fill"></i></span>
+                <input type="text" name="destination" placeholder="Travelling To" required>
+            </div>
+
+            <label class="modal-label">Travel Date</label>
+            <div class="modal-input-group">
+                <span><i class="bi bi-calendar-event-fill"></i></span>
+                <input type="date" name="date" required>
+            </div>
+
+            <div class="modal-input-group">
+                <span><i class="bi bi-telephone-fill"></i></span>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+            </div>
+
+            <div class="modal-input-group">
+                <span><i class="bi bi-people-fill"></i></span>
+                <input type="number" name="passengers" placeholder="No. Of Passengers" min="1" required>
+            </div>
+
+            <button type="submit" class="modal-submit-btn">Enquire Now</button>
+        </form>
+    </div>
+</div>

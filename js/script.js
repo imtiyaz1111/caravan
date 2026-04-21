@@ -22,6 +22,55 @@ loadComponent("navbar", "/components/navbar.html").then(() => {
 // Load Footer
 loadComponent("footer", "/components/footer.html");
 
+// ================= BOOKING MODAL LOGIC =================
+// 1. Inject Placeholder for Modal
+const modalContainer = document.createElement("div");
+modalContainer.id = "booking-modal-holder";
+document.body.appendChild(modalContainer);
+
+// 2. Load Modal CSS Dynamically
+const modalStyles = document.createElement("link");
+modalStyles.rel = "stylesheet";
+modalStyles.href = "/css/booking-modal.css";
+document.head.appendChild(modalStyles);
+
+// 3. Load Modal HTML
+loadComponent("booking-modal-holder", "/components/booking-modal.html").then(() => {
+  const modalOverlay = document.getElementById("bookingModalOverlay");
+  const closeBtn = document.getElementById("closeBookingModal");
+
+  if (modalOverlay && closeBtn) {
+    // Open Modal Function
+    window.openBookingModal = function () {
+      modalOverlay.classList.add("active");
+      document.body.style.overflow = "hidden"; // Prevent scroll
+    };
+
+    // Close Modal Function
+    window.closeBookingModal = function () {
+      modalOverlay.classList.remove("active");
+      document.body.style.overflow = "auto";
+    };
+
+    closeBtn.addEventListener("click", closeBookingModal);
+
+    // Close on click outside
+    modalOverlay.addEventListener("click", (e) => {
+      if (e.target === modalOverlay) closeBookingModal();
+    });
+  }
+});
+
+// 4. Attach Global Click Listener for Booking Triggers
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".booking-trigger")) {
+    e.preventDefault();
+    if (window.openBookingModal) {
+      window.openBookingModal();
+    }
+  }
+});
+
 // MOBILE DROPDOWN + MEGA MENU FIX
 document.querySelectorAll('.dropdown-toggle').forEach(item => {
   item.addEventListener('click', function (e) {

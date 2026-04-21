@@ -2292,16 +2292,7 @@ body {
   overflow: hidden;
 }
 
-/* GOLD GLOW */
-.cta-box::before {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(201, 163, 78, 0.2), transparent);
-  top: -100px;
-  right: -100px;
-}
+
 
 /* CONTENT */
 .cta-content h2 {

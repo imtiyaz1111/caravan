@@ -152,30 +152,30 @@
                     <div class="col-lg-7">
                         <div class="contact-form-panel">
                             <h3>Send a Message</h3>
-                            <form>
+                            <form action="/send-inquiry.php" method="POST">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span><i class="bi bi-person"></i></span>
-                                            <input type="text" placeholder="Full Name" required>
+                                            <input type="text" name="fullname" placeholder="Full Name" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span><i class="bi bi-telephone"></i></span>
-                                            <input type="tel" placeholder="Phone Number" required>
+                                            <input type="tel" name="phone" placeholder="Phone Number" required>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="input-group">
                                             <span><i class="bi bi-envelope"></i></span>
-                                            <input type="email" placeholder="Email Address">
+                                            <input type="email" name="email" placeholder="Email Address">
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="input-group">
                                             <span><i class="bi bi-pencil-square"></i></span>
-                                            <textarea placeholder="Tell us about your trip (Destination, Dates, Pax)"
+                                            <textarea name="message" placeholder="Tell us about your trip (Destination, Dates, Pax)"
                                                 rows="4"></textarea>
                                         </div>
                                     </div>
@@ -417,7 +417,7 @@
                     <div class="col-lg-5">
                         <div class="cta-action">
 
-                            <a href="tel:+919289990112" class="btn-calls">
+                            <a href="javascript:void(0)" class="btn-calls booking-trigger">
                                 Book Now <i class="bi bi-arrow-right"></i>
                             </a>
 

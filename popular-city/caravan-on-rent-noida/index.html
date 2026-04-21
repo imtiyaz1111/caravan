@@ -81,31 +81,31 @@
                 <div class="col-lg-5">
                     <div class="city-booking-form animate fade-up">
                         <h3 class="mb-4 text-white text-center" style="font-weight: 700;">Book Your Journey</h3>
-                        <form>
+                        <form action="/send-inquiry.php" method="POST">
                             <div class="input-group">
                                 <span><i class="bi bi-geo-alt-fill"></i></span>
-                                <input type="text" placeholder="Pick From (Noida Location)" required>
+                                <input type="text" name="pickup" placeholder="Pick From (Noida Location)" required>
                             </div>
 
                             <div class="input-group">
                                 <span><i class="bi bi-geo-alt-fill"></i></span>
-                                <input type="text" placeholder="Travelling To" required>
+                                <input type="text" name="destination" placeholder="Travelling To" required>
                             </div>
 
                             <label>Pick Travel Date</label>
                             <div class="input-group">
                                 <span><i class="bi bi-calendar-event-fill"></i></span>
-                                <input type="date" required>
+                                <input type="date" name="date" required>
                             </div>
 
                             <div class="input-group">
                                 <span><i class="bi bi-telephone-fill"></i></span>
-                                <input type="tel" placeholder="Phone Number" required>
+                                <input type="tel" name="phone" placeholder="Phone Number" required>
                             </div>
 
                             <div class="input-group">
                                 <span><i class="bi bi-people-fill"></i></span>
-                                <input type="number" placeholder="No. Of Passengers" min="1" required>
+                                <input type="number" name="passengers" placeholder="No. Of Passengers" min="1" required>
                             </div>
 
                             <button type="submit">Enquire Now in Noida</button>
@@ -131,7 +131,7 @@
                 <!-- Destination 1 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="destination-card">
-                        <img src="../images/slide/slide3.webp" alt="Okhla Bird Sanctuary">
+                        <img src="../../images/destinations/birds.jpg" alt="Okhla Bird Sanctuary">
                         <div class="destination-overlay"></div>
                         <div class="destination-content">
                             <h3>Okhla Bird Sanctuary</h3>
@@ -143,7 +143,7 @@
                 <!-- Destination 2 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="destination-card">
-                        <img src="../images/slide/slide4.webp" alt="Worlds of Wonder">
+                        <img src="../../images/destinations/worldsofwander.avif" alt="Worlds of Wonder">
                         <div class="destination-overlay"></div>
                         <div class="destination-content">
                             <h3>Worlds of Wonder</h3>
@@ -155,7 +155,7 @@
                 <!-- Destination 3 -->
                 <div class="col-lg-4 col-md-6">
                     <div class="destination-card">
-                        <img src="../images/slide/slide5.webp" alt="ISKCON Temple Noida">
+                        <img src="../../images/destinations/temple.webp" alt="ISKCON Temple Noida">
                         <div class="destination-overlay"></div>
                         <div class="destination-content">
                             <h3>ISKCON Temple</h3>
@@ -331,7 +331,7 @@
                     <div class="col-lg-5">
                         <div class="cta-action">
 
-                            <a href="tel:+919289990112" class="btn-calls">
+                            <a href="javascript:void(0)" class="btn-calls booking-trigger">
                                 Book Now <i class="bi bi-arrow-right"></i>
                             </a>
 
