@@ -130,26 +130,7 @@ const cityObserver = new IntersectionObserver(entries => {
 
 cityCards.forEach(card => cityObserver.observe(card));
 
-// tour
-if (typeof Swiper !== 'undefined' && document.querySelector(".tourSwiper")) {
-  const tourSwiper = new Swiper(".tourSwiper", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    loop: true,
-    autoplay: {
-      delay: 3000,
-    },
-    navigation: {
-      nextEl: ".tour-next",
-      prevEl: ".tour-prev",
-    },
-    breakpoints: {
-      0: { slidesPerView: 1 },
-      768: { slidesPerView: 2 },
-      1024: { slidesPerView: 3 }
-    }
-  });
-}
+// Scroll reveal remains active via the .animate classes in HTML
 
 // reviews
 if (typeof Swiper !== 'undefined' && document.querySelector(".reviewSwiper")) {
