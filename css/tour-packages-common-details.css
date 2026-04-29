@@ -1,0 +1,674 @@
+/* ================= TOUR HEADER SECTION ================= */
+.tour-header {
+    position: relative;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    padding: 120px 0 80px 0;
+}
+
+/* Background with Overlay */
+.tour-header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    transition: transform 0.5s ease;
+}
+
+.tour-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.2) 100%);
+    z-index: -1;
+}
+
+/* Breadcrumbs */
+.tour-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.tour-breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.tour-breadcrumb a:hover {
+    color: #c9a34e;
+}
+
+.tour-breadcrumb span {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.tour-breadcrumb .current {
+    color: #c9a34e;
+}
+
+/* Hero Content */
+.tour-hero-content h1 {
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.tour-hero-content h1 span {
+    display: block;
+    color: #c9a34e;
+}
+
+.tour-tagline {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+/* Spec Bar */
+.tour-spec-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+}
+
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.spec-item i {
+    font-size: 24px;
+    color: #c9a34e;
+}
+
+.spec-item span {
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Hero Buttons */
+.tour-hero-btns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-premium {
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-premium-gold {
+    background: #c9a34e;
+    color: #000;
+    box-shadow: 0 10px 20px rgba(201, 163, 78, 0.3);
+}
+
+.btn-premium-gold:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2);
+}
+
+.btn-premium-outline {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-premium-outline:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-3px);
+}
+
+/* ================= ABOUT TOUR SECTION ================= */
+.about-tour-section {
+    padding: 100px 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.about-tour-content .about-tag {
+    color: #c9a34e;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-tour-content h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 800;
+    color: #111;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.about-tour-content h2 span {
+    color: #c9a34e;
+}
+
+.about-tour-content p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.about-tour-content p strong {
+    color: #111;
+}
+
+.about-tour-img-box {
+    position: relative;
+    padding-left: 20px;
+}
+
+.about-tour-img-box img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.about-tour-img-box::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    border: 10px solid #c9a34e;
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+.tour-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.tour-feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #111;
+}
+
+.tour-feature-list li i {
+    color: #c9a34e;
+    font-size: 18px;
+}
+
+/* ================= TOUR HIGHLIGHTS SECTION ================= */
+.tour-highlights-section {
+    padding: 100px 0;
+    background: #f8f9fa;
+}
+
+.highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.highlight-card {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(201, 163, 78, 0.15);
+    border-color: rgba(201, 163, 78, 0.3);
+}
+
+.highlight-img-box {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+}
+
+.highlight-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.highlight-card:hover .highlight-img-box img {
+    transform: scale(1.1);
+}
+
+.highlight-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(201, 163, 78, 0.9);
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 700;
+    backdrop-filter: blur(5px);
+    z-index: 2;
+}
+
+.highlight-info {
+    padding: 25px;
+}
+
+.highlight-info h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.highlight-card:hover .highlight-info h4 {
+    color: #c9a34e;
+}
+
+.highlight-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.highlight-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: rgba(201, 163, 78, 0.1);
+    color: #c9a34e;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Section Title Wrapper */
+.section-title-wrapper {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+}
+
+.section-title-wrapper h2 {
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.section-title-wrapper p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ================= CARAVAN EXPERIENCE SECTION ================= */
+.caravan-experience-section {
+    padding: 100px 0;
+    background: #0a0a0a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.caravan-experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 70% 30%, rgba(201, 163, 78, 0.05), transparent 50%);
+    pointer-events: none;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.experience-card:hover {
+    background: rgba(201, 163, 78, 0.05);
+    border-color: rgba(201, 163, 78, 0.4);
+    transform: translateY(-10px);
+}
+
+.experience-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(201, 163, 78, 0.1);
+    color: #c9a34e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    font-size: 28px;
+    margin-bottom: 25px;
+    transition: all 0.4s ease;
+}
+
+.experience-card:hover .experience-icon {
+    background: #c9a34e;
+    color: #000;
+    box-shadow: 0 10px 20px rgba(201, 163, 78, 0.3);
+}
+
+.experience-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.experience-card p {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.experience-img-wrap {
+    margin-top: 60px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experience-img-wrap img {
+    width: 100%;
+    transition: transform 0.8s ease;
+}
+
+.experience-img-wrap:hover img {
+    transform: scale(1.05);
+}
+
+/* Animations */
+.animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .tour-header {
+        min-height: auto;
+        padding: 150px 0 80px 0;
+        text-align: center;
+    }
+
+    .tour-breadcrumb,
+    .tour-spec-bar,
+    .tour-hero-btns {
+        justify-content: center;
+    }
+
+    .tour-spec-bar {
+        width: 100%;
+    }
+
+    .about-tour-section {
+        padding: 60px 0;
+    }
+
+    .about-tour-content {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .about-tour-img-box {
+        padding-left: 0;
+    }
+}
+
+
+
+/* ================= PREMIUM ENQUIRY SECTION ================= */
+.tour-enquiry-section {
+    padding: 100px 0;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.enquiry-content h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+.enquiry-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+.enquiry-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.benefit-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(201, 163, 78, 0.1);
+    color: #c9a34e;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+}
+
+.benefit-text h5 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #111;
+}
+
+.benefit-text p {
+    font-size: 14px;
+    color: #777;
+    margin: 0;
+}
+
+.contact-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #f8f9fa;
+    padding: 12px 25px;
+    border-radius: 50px;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.contact-pill:hover {
+    background: #c9a34e;
+    color: #fff;
+    border-color: #c9a34e;
+    transform: translateX(5px);
+}
+
+.enquiry-form-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    position: relative;
+    z-index: 1;
+}
+
+.form-group-premium {
+    margin-bottom: 5px;
+}
+
+.form-group-premium label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: #c9a34e;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.form-group-premium input,
+.form-group-premium select,
+.form-group-premium textarea {
+    width: 100%;
+    padding: 14px 20px;
+    background: #f8f9fa;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    font-size: 15px;
+    color: #111;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group-premium input:focus,
+.form-group-premium select:focus,
+.form-group-premium textarea:focus {
+    background: #fff;
+    border-color: #c9a34e;
+    box-shadow: 0 0 0 4px rgba(201, 163, 78, 0.15);
+}
+
+.form-group-premium input[readonly] {
+    background: rgba(201, 163, 78, 0.05);
+    color: #c9a34e;
+    font-weight: 600;
+}
+
+.form-group-premium textarea {
+    height: 120px;
+    resize: none;
+}
+
+.form-disclaimer {
+    font-size: 12px;
+    color: #999;
+    text-align: center;
+    margin-top: 15px;
+}
+
+@media (max-width: 991px) {
+    .tour-enquiry-section {
+        padding: 60px 0;
+    }
+    
+    .enquiry-content {
+        margin-bottom: 50px;
+        text-align: center;
+    }
+    
+    .benefit-item {
+        justify-content: center;
+        text-align: left;
+    }
+    
+    .enquiry-form-card {
+        padding: 30px 20px;
+    }
+}

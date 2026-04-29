@@ -1,0 +1,904 @@
+/* ================= VLOGGING COMMON DETAILS ================= */
+
+:root {
+    --gold-primary: #c9a34e;
+    --gold-light: #e2b553;
+    --dark-bg: #0a0a0a;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* 🔥 PREMIUM VLOGGING HEADER (MATCHING FLEET STYLE) */
+.vlogging-hero {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-bg);
+    padding: 100px 0 60px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.vlogging-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.4) contrast(1.1);
+    animation: slowZoom 20s infinite alternate ease-in-out;
+}
+
+@keyframes slowZoom {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.vlogging-hero::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(to top, var(--dark-bg), transparent);
+    z-index: 2;
+}
+
+.vlogging-hero .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* --- BREADCRUMBS --- */
+.vlogging-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.vlogging-breadcrumb a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.vlogging-breadcrumb a:hover {
+    color: var(--gold-primary);
+}
+
+.vlogging-breadcrumb span {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vlogging-breadcrumb .current {
+    color: var(--gold-primary);
+    font-weight: 600;
+}
+
+/* --- HERO CONTENT --- */
+.vlogging-hero-content h1 {
+    font-size: clamp(32px, 6vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.vlogging-hero-content h1 span {
+    display: block;
+    color: var(--gold-primary);
+    background: linear-gradient(45deg, var(--gold-primary), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.vlogging-tagline {
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 650px;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--gold-primary);
+    padding-left: 20px;
+    line-height: 1.7;
+}
+
+/* --- SPEC BAR (PILLS) --- */
+.vlogging-spec-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.vlogging-spec-item {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 12px 25px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.vlogging-spec-item i {
+    color: var(--gold-primary);
+    font-size: 18px;
+}
+
+.vlogging-spec-item:hover {
+    background: rgba(201, 163, 78, 0.1);
+    border-color: var(--gold-primary);
+    transform: translateY(-3px);
+}
+
+/* --- CTA BUTTONS --- */
+.vlogging-hero-btns {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-premium {
+    padding: 16px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.btn-premium-gold {
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+    color: #000;
+    box-shadow: 0 10px 20px rgba(201, 163, 78, 0.3);
+}
+
+.btn-premium-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(201, 163, 78, 0.5);
+    color: #000;
+}
+
+.btn-premium-outline {
+    background: transparent;
+    color: #fff;
+    border: 2px solid var(--glass-border);
+}
+
+.btn-premium-outline:hover {
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+    color: #000;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .vlogging-hero {
+        padding-top: 120px;
+        min-height: 70vh;
+        text-align: center;
+    }
+    
+    .vlogging-tagline {
+        margin: 0 auto 35px;
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .vlogging-spec-bar, .vlogging-hero-btns {
+        justify-content: center;
+    }
+
+    .vlogging-breadcrumb {
+        justify-content: center;
+    }
+
+    .btn-premium {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ================= PRODUCTION ABOUT SECTION ================= */
+.production-about {
+    padding: 100px 0;
+    background: #ffffff;
+    color: #111;
+    position: relative;
+    overflow: hidden;
+}
+
+.production-about .section-tag {
+    color: var(--gold-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.production-about h2 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 25px;
+    color: #000;
+}
+
+.production-about p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.about-img-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.about-img-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    border: 10px solid var(--gold-primary);
+    opacity: 0.1;
+    z-index: 0;
+    border-radius: 20px;
+}
+
+.production-about-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.production-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.p-feature-card {
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 20px;
+    border-left: 4px solid var(--gold-primary);
+    transition: all 0.3s ease;
+}
+
+.p-feature-card:hover {
+    background: #fff;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+}
+
+.p-feature-card i {
+    font-size: 28px;
+    color: var(--gold-primary);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.p-feature-card h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.p-feature-card p {
+    font-size: 14px;
+    margin-bottom: 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+    .production-about {
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .production-about h2 {
+        font-size: 32px;
+    }
+
+    .about-img-wrapper {
+        margin-bottom: 50px;
+    }
+
+    .production-features {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= VLOGGING AMENITIES GRID ================= */
+.vlogging-amenities {
+    padding: 100px 0;
+    background: #0d0d0d;
+    color: #fff;
+    position: relative;
+}
+
+.vlogging-amenities .section-tag {
+    color: var(--gold-primary);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.vlogging-amenities h2 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #fff;
+}
+
+.amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.amenity-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px 30px;
+    border-radius: 25px;
+    text-align: center;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.amenity-card:hover {
+    background: rgba(201, 163, 78, 0.08);
+    border-color: var(--gold-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.amenity-icon-box {
+    width: 80px;
+    height: 80px;
+    background: rgba(201, 163, 78, 0.12);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 32px;
+    color: var(--gold-primary);
+    transition: all 0.4s ease;
+}
+
+.amenity-card:hover .amenity-icon-box {
+    background: var(--gold-primary);
+    color: #000;
+    transform: scale(1.1) rotate(10deg);
+}
+
+.amenity-card h4 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: #fff;
+}
+
+.amenity-card p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    .amenities-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .amenity-card {
+        grid-column: span 2;
+    }
+    .amenity-card:nth-child(4) {
+        grid-column: 2 / 4;
+    }
+    .amenity-card:nth-child(5) {
+        grid-column: 4 / 6;
+    }
+}
+
+@media (max-width: 991px) {
+    .amenities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .amenity-card:nth-child(5) {
+        grid-column: span 2;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+    .amenity-card:nth-child(5) {
+        grid-column: span 1;
+    }
+    .vlogging-amenities h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+    .amenity-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ================= PRODUCTION LOGISTICS SECTION ================= */
+.production-logistics {
+    padding: 100px 0;
+    background: #ffffff;
+    color: #111;
+    position: relative;
+    border-top: 1px solid #f0f0f0;
+}
+
+.production-logistics .section-tag {
+    color: var(--gold-primary);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.production-logistics h2 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #000;
+}
+
+.logistics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.logistics-card {
+    text-align: center;
+    padding: 40px 30px;
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.logistics-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(201, 163, 78, 0.15);
+    border-color: var(--gold-primary);
+}
+
+.logistics-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: #fdfaf3;
+    color: var(--gold-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 25px;
+    font-size: 28px;
+    border: 1px solid rgba(201, 163, 78, 0.1);
+    transition: all 0.4s ease;
+}
+
+.logistics-card:hover .logistics-icon-wrap {
+    background: var(--gold-primary);
+    color: #fff;
+    transform: scale(1.1);
+    border-color: var(--gold-primary);
+}
+
+.logistics-card h4 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.logistics-card p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .logistics-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .production-logistics h2 {
+        font-size: 32px;
+    }
+    
+    .logistics-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ================= WHY CHOOSE US FOR SHOOTS ================= */
+.why-choose-shoots {
+    padding: 100px 0;
+    background: #ffffff;
+    color: #111;
+    position: relative;
+}
+
+.why-choose-shoots .section-tag {
+    color: var(--gold-primary);
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.why-choose-shoots h2 {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #000;
+}
+
+.why-shoots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.why-shoots-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    transition: all 0.4s ease;
+    border: 1px solid #f2f2f2;
+}
+
+.why-shoots-card:hover {
+    background: #fdfaf3;
+    border-color: var(--gold-primary);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.why-shoots-icon {
+    font-size: 40px;
+    color: var(--gold-primary);
+    margin-bottom: 25px;
+    display: block;
+}
+
+.why-shoots-card h4 {
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000;
+}
+
+.why-shoots-card p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+    .why-shoots-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .why-choose-shoots h2 {
+        font-size: 32px;
+    }
+    .why-shoots-card {
+        padding: 30px 20px;
+    }
+}
+
+/* ================= PRODUCTION LEAD SECTION ================= */
+.production-lead {
+    padding: 100px 0;
+    background: #0a0a0a;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.production-lead .lead-content h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 25px;
+    line-height: 1.2;
+}
+
+.production-lead .lead-content p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+
+.production-lead .lead-points {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.production-lead .lead-points li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffff;
+    }
+
+.production-lead .lead-points li i {
+    width: 32px;
+    height: 32px;
+    background: var(--gold-primary);
+    color: #000 !important;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+select option{
+    color: #000 !important;
+}
+
+.production-lead .vlogging-support-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.production-lead .vlogging-support-btn:hover {
+    background: var(--gold-primary);
+    border-color: var(--gold-primary);
+    color: #000;
+}
+
+.production-lead .form-wrapper {
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 45px;
+    border-radius: 30px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.vlogging-lead-form {
+    background: transparent !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.vlogging-lead-form input,
+.vlogging-lead-form select,
+.vlogging-lead-form textarea {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #fff !important;
+    padding: 15px 20px !important;
+    border-radius: 12px !important;
+    width: 100%;
+    margin-bottom: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+.vlogging-lead-form input::placeholder,
+.vlogging-lead-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.vlogging-lead-form input:focus,
+.vlogging-lead-form select:focus,
+.vlogging-lead-form textarea:focus {
+    border-color: var(--gold-primary) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.production-lead .lead-form textarea {
+    height: 130px;
+    resize: none;
+}
+
+.production-lead .btn-submit {
+    width: 100%;
+    background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(201, 163, 78, 0.2);
+}
+
+.production-lead .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(201, 163, 78, 0.4);
+    background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+}
+
+@media (max-width: 991px) {
+    .production-lead {
+        padding: 60px 0;
+        text-align: center;
+    }
+    .production-lead .lead-content h2 {
+        font-size: 32px;
+    }
+    .production-lead .lead-points {
+        display: inline-block;
+        text-align: left;
+    }
+    .production-lead .form-wrapper {
+        padding: 30px 20px;
+        margin-top: 50px;
+    }
+}
+
+/* ================= VLOGGING FAQ SECTION ================= */
+.vlogging-faq {
+    padding: 100px 0;
+    background: #ffffff;
+    color: #111;
+}
+
+.vlogging-faq h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.vlogging-faq span.text-gold {
+    color: var(--gold-primary);
+}
+
+.vlogging-faq .section-tag {
+    color: var(--gold-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.vlogging-faq .accordion-item {
+    border: none !important;
+    margin-bottom: 15px;
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.vlogging-faq .accordion-item:hover {
+    box-shadow: 0 10px 25px rgba(201, 163, 78, 0.1);
+}
+
+.vlogging-faq .accordion-button {
+    padding: 20px 25px;
+    font-weight: 600;
+    font-size: 17px;
+    color: #333;
+    background: #fff;
+    box-shadow: none;
+    border: none;
+}
+
+.vlogging-faq .accordion-button:not(.collapsed) {
+    color: var(--gold-primary);
+    background: #fdfaf3;
+}
+
+.vlogging-faq .accordion-button::after {
+    background-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.vlogging-faq .accordion-button:not(.collapsed)::after {
+    filter: sepia(100%) saturate(1000%) hue-rotate(10deg);
+}
+
+.vlogging-faq .accordion-body {
+    padding: 10px 25px 25px;
+    color: #666;
+    line-height: 1.7;
+    background: #fdfaf3;
+}
+
+.vlogging-faq .faq-img-wrapper {
+    position: relative;
+    padding: 20px;
+}
+
+.vlogging-faq .faq-img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 991px) {
+    .vlogging-faq {
+        padding: 60px 0;
+        text-align: center;
+    }
+    .vlogging-faq .faq-img-wrapper {
+        margin-top: 50px;
+    }
+    .vlogging-faq h2 {
+        font-size: 32px;
+    }
+}
+

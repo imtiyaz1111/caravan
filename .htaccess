@@ -1,0 +1,27 @@
+RewriteEngine On
+RewriteBase /
+
+# 1. REMOVE index.html FROM URL
+RewriteCond %{THE_REQUEST} \s/index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L]
+
+# 2. REMOVE .html EXTENSION FROM URL (SAFE)
+RewriteCond %{THE_REQUEST} \s([^.]+)\.html [NC]
+RewriteRule ^(.+)\.html$ /$1 [R=301,L]
+
+# 3. REMOVE /index FROM URL
+RewriteCond %{THE_REQUEST} \s(.*/)?index(\.html)? [NC]
+RewriteRule ^(.*/)?index$ /$1 [R=301,L]
+
+# 4. DO NOT TOUCH REAL FILES OR FOLDERS (IMPORTANT FIX)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# 5. INTERNALLY LOAD .html FILES
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+# 6. HANDLE FOLDER index.html
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.*/)?$ $1index.html [L]
